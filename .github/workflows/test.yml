@@ -10,3 +10,10 @@ jobs:
         run: echo "hello world"
       - name: step two
         run: echo "hello world again"
+      - name: pythone
+        run: |
+            import platform
+            print(platform.processsor())
+        shell: python      
+        
+           
