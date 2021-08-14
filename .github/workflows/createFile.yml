@@ -27,7 +27,7 @@ jobs:
         run: |
           echo $RANDOM >> random.txt
           git add random.txt
-          git commit -m ""random file"
+          git commit -m "random file"
           git push
 
       
