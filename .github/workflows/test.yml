@@ -14,6 +14,12 @@ jobs:
         run: |
             import platform
             print(platform.processor())  
-        shell: python      
+        shell: python   
+      - name: using github checkout action
+        uses: action/checkout@v1
+      - name: lising the items
+        run: 
+          pwd
+          ls -a
         
            
