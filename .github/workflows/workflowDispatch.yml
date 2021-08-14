@@ -1,7 +1,7 @@
 name: release
 
 on: 
-  workflow_dispatch:
+  workflow_dispatch: 
     inputs:
       version: 
         description: "bump version it must be mijor, minor, or patch"
