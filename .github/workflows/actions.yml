@@ -1,0 +1,15 @@
+name: actions
+
+on: push
+
+jobs: 
+  newjobforrunningtheactions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first one
+        id: greet
+        uses: actions/hello-world-javascript-action@master
+        with: 
+          who-to-greet: jone
+      - name: logging the time
+        run: echo "${{ steps.greet.outputs.time }}"
