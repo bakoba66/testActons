@@ -15,9 +15,9 @@ jobs:
           git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
       - name: worrking on main
         run: |
-          git checkout main
-          git branch --set-upstream-to=origin/main
-      - name: pulling latest from main
+          git checkout master
+          git branch --set-upstream-to=origin/master
+      - name: pulling latest from master
         run: |
           git pull
       - name: lising the items in the pwd
