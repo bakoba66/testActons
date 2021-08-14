@@ -1,0 +1,16 @@
+name: release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      version: 
+        description: "bump version it must be mijor, minor, or patch"
+        required: true
+        default: minor
+
+jobs:
+  release-the-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo version
+        run: echo ${{ github.events.inputs.version }}
