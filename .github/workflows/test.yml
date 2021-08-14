@@ -16,7 +16,7 @@ jobs:
             print(platform.processor())  
         shell: python   
       - name: using github checkout action
-        uses: action/checkout@v1
+        uses: actions/checkout@v1
       - name: lising the items
         run: 
           pwd
