@@ -1,6 +1,6 @@
 name: createFile
 
-on: push
+on: pull-request
 
 jobs:
   creating-a-file:

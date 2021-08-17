@@ -1,16 +1,18 @@
 name: actions
 
-on: pull_request
+on: push
 
-jobs: 
-  newjobforrunningtheactions:
+jobs:
+  dycrypt:
     runs-on: ubuntu-latest
     steps:
-      - name: first one
-        id: greet
-        uses: actions/hello-world-javascript-action@master
-        with: 
-          who-to-greet: jone
-      - name: logging the time
-        run: echo "${{ steps.greet.outputs.time }}"
-
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: dycrypt
+        env:
+          password: ${{ secrets.PASS }}
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="$password"
+          --output $HOME/secret.json secret.gpg
+      - name: read
+        run: cat $HOME/secret.json
