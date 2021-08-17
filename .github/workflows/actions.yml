@@ -15,5 +15,5 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$password"
           --output $HOME/secret.json secret.json.gpg
       - name: read
-        run: cat $HOME/secret.json
+        run: cat $HOME/secret.json   
 
