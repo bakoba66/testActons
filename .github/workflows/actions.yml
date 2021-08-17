@@ -2,7 +2,7 @@ name: actions
 
 on: push
 
-jobs:
+jobs: 
   dycrypt:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +13,7 @@ jobs:
           password: ${{ secrets.PASS }}
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="$password"
-          --output $HOME/secret.json secret.gpg
+          --output $HOME/secret.json secret.json.gpg
       - name: read
         run: cat $HOME/secret.json
+
