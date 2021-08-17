@@ -9,11 +9,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
       - name: dycrypt
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$password" --output $HOME/secret.json secret.json.gpg
         env:
           password: ${{ secrets.PASS }}
-        run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="$password"
-          --output $HOME/secret.json secret.json.gpg
       - name: read
         run: cat $HOME/secret.json   
 
