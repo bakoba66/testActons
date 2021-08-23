@@ -1,0 +1,13 @@
+name: Strategy
+on: push
+
+jobs:
+  testing_strategy:
+    strategy:
+      matrix:
+        number_to_log: [1,2,3]
+      fail-fast: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing the strategy
+        run: echo ${{ matrix.numbers_to_log }}
