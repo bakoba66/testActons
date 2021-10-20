@@ -6,7 +6,10 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, reopened]
+    types: [reopened, opened]
+  push:
+    branches:
+      - test_branch
  
 jobs:
   canceling_the_jobs:
@@ -23,9 +26,7 @@ jobs:
         shell: python   
       - name: using github checkout action
         uses: actions/checkout@v1
-      - name: lising the items
-        run: 
-          pwd
-          ls -a
+      - name: run the test
+        run: fastlane test
         
            
