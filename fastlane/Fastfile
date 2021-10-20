@@ -1,0 +1,11 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Generate new localized screenshots"
+  lane :test do
+    run_tests(
+  project: "ActionsTest.xcodeproj",
+  scheme: "ActionsTestTests",
+  clean: false)
+  end
+end

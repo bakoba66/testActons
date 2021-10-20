@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ActionsTestUITests.xctest' tests='5' failures='2'>
+  <testsuite name='ActionsTestTests.ActionsTestTests' tests='3' failures='2'>
+    <testcase classname='ActionsTestTests.ActionsTestTests' name='testExample'>
+      <failure message='XCTAssertNil failed: &quot;1&quot;'>ActionsTestTests/ActionsTestTests.swift:22</failure>
+    </testcase>
+    <testcase classname='ActionsTestTests.ActionsTestTests' name='testExample'>
+      <failure message='XCTAssertTrue failed'>ActionsTestTests/ActionsTestTests.swift:23</failure>
+    </testcase>
+    <testcase classname='ActionsTestTests.ActionsTestTests' name='testPerformanceExample' time='0.255'/>
+  </testsuite>
+  <testsuite name='ActionsTestUITests.ActionsTestUITests' tests='2' failures='0'>
+    <testcase classname='ActionsTestUITests.ActionsTestUITests' name='testExample' time='3.760'/>
+    <testcase classname='ActionsTestUITests.ActionsTestUITests' name='testLaunchPerformance' time='76.690'/>
+  </testsuite>
+</testsuites>

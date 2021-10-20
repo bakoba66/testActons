@@ -6,26 +6,24 @@ on:
   pull_request:
     branches:
       - main
-    types: [opened, reopened]
+    types: [reopened, opened]
+  push:
+    branches:
+      - test_branch
  
 jobs:
   canceling_the_jobs:
-    runs-on: ubuntu-latest
+    runs-on: macos-10.15
     steps:
-      - name: step one
-        run: echo "hello world"
-      - name: step two
-        run: echo "hello world again"
-      - name: pythone
-        run: |
-            import platform
-            print(platform.processor())  
-        shell: python   
+      - name: Git - Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup - Xcode
+        run: sudo xcode-select -s /Applications/Xcode_12.3.app
       - name: using github checkout action
         uses: actions/checkout@v1
-      - name: lising the items
-        run: 
-          pwd
-          ls -a
+      - name: run the test
+        run: fastlane test
         
            
